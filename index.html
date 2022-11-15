@@ -87,11 +87,11 @@
     <section class="promo">
       <div id="promo_slider" class="promo__slider swiper">
         <div class="promo__inner swiper-wrapper">
-          <img src="img/lazy-lowQuality.png" data-src="img/promo-slider/dd-37.jpg" class="promo__img swiper-slide swiper-lazy" alt="Дом из клееного бруса ДД-37">
           <img src="img/lazy-lowQuality.png" data-src="img/promo-slider/dd-61.jpg" class="promo__img swiper-slide swiper-lazy" alt="Дом из клееного бруса ДД-61">
           <img src="img/lazy-lowQuality.png" data-src="img/promo-slider/dd-80.jpg" class="promo__img swiper-slide swiper-lazy" alt="Дом из клееного бруса ДД-80">
           <img src="img/lazy-lowQuality.png" data-src="img/promo-slider/dd-93.jpg" class="promo__img swiper-slide swiper-lazy" alt="Дом из клееного бруса ДД-93">
           <img src="img/lazy-lowQuality.png" data-src="img/promo-slider/dd-103.jpg" class="promo__img swiper-slide swiper-lazy" alt="Дом из клееного бруса ДД-103">
+          <img src="img/lazy-lowQuality.png" data-src="img/promo-slider/dd-37.jpg" class="promo__img swiper-slide swiper-lazy" alt="Дом из клееного бруса ДД-37">
         </div>
       </div>
       <div class="container promo__container">
@@ -409,7 +409,7 @@
         </div>        
         <p class="model__caption">* Чтобы узнать подробную информацию о брусе, нажмите на его картинку</p>
         <div class="model__list">
-          <div class="model__item">
+          <div class="model__item model__item-hit">
             <a data-fancybox data-src="#3l_60_rt_modal" class="model__img-link">
               <img src="img/lazy-lowQuality.png" data-src="img/model/preview/3l-60-rt.png" class="model__img lazy" alt="Радиальный клееный брус 3L-60-RT">
             </a>
@@ -569,10 +569,10 @@
               <input type="text" class="form-input calculation-name" name="Имя" placeholder='Имя'>
             </label>
             <label class="form__label">
-              <input type="email" class="form-input calculation-email" id="calculation-email" data-validate-field="email" name="E-mail"  placeholder='e-mail *'>
+              <input type="email" class="form-input calculation-email" id="calculation-email" data-validate-field="email" name="E-mail"  placeholder='e-mail'>
             </label>
             <label class="form__label">
-              <input type="tel" class="form-input calculation-tel" id="calculation-tel" data-validate-field="tel" name="Телефон" placeholder="Телефон *">
+              <input type="tel" class="form-input calculation-tel" id="calculation-tel" data-validate-field="tel" name="Телефон" placeholder="Телефон" >
             </label>
        
             <textarea name="Комментарий" id="form_textarea" class="form-textarea" placeholder='Оставьте комментарий'></textarea>
@@ -828,16 +828,16 @@
     <form id="project_form" class="modal__form" method="POST">
       <input type='hidden' name='Тема' value='' class="modal__subject">
       <label class="form__label center">
-        <input type="text" class="form-input project-name" name="Имя" placeholder='Имя'>
+        <input type="text" class="form-input project-name" id="name" name="Имя" placeholder='Имя' required>
       </label>
       <label class="form__label center">
-        <input class="form-input project-email" type="email" data-validate-field="email" name="E-mail" required placeholder='E-mail'>
+        <input class="form-input project-email" id="email" type="email" data-validate-field="email" name="E-mail" placeholder='E-mail'>
       </label>
       <label class="form__label center">
-        <input type="tel" class="form-input project-tel" name="WhatsApp" placeholder="WhatsApp *">
+        <input type="tel" class="form-input project-tel" id="whatsapp" name="WhatsApp" placeholder="WhatsApp">
       </label>
       <label class="form__label center">
-        <input type="tel" class="form-input project-tel" name="Telegram" placeholder="Telegram *">
+        <input type="tel" class="form-input project-tel" id="telegram" name="Telegram" placeholder="Telegram">
       </label>
       <p class="form__caption">* Выберите удобный для вас мессенджер, на который мы отправим смету. Поля с мессенджерами необязательны для заполнения.</p>
       <button type="submit" class='modal__btn btn'>получить смету</button>

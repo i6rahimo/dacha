@@ -11,7 +11,7 @@ const form2 = document.querySelector('#project_form');
 const form3 = document.querySelector('#calculation_form');
 
 // const validation1 = new JustValidate('#consult_form');
-// const validation2 = new JustValidate('#project_form');
+const validation2 = new JustValidate('#project_form');
 const validation3 = new JustValidate('#calculation_form');
 
 const telSelector2 = form2.querySelectorAll('input[type="tel"]');
@@ -60,56 +60,65 @@ inputMask3.mask(telSelector3);
 //     document.location.href = 'spasibo';
 //   });
 
-// validation2
-//   .addField('.project-name', [
-//     {
-//       rule: 'minLength',
-//       value: 3,
-//       errorMessage: 'Введите 3 и более символов',
-//     },
-//     {
-//       rule: 'maxLength',
-//       value: 15,
-//       errorMessage: 'Максимум — 15 символов',
-//     },
-//     {
-//       rule: 'required',
-//       value: true,
-//       errorMessage: 'Имя обязательно'
-//     }
-//   ])
-//   .addField('.project-email', [
-//     {
-//       rule: 'required',
-//       value: true,
-//       errorMessage: 'Email обязателен',
-//     },
-//     {
-//       rule: 'email',
-//       value: true,
-//       errorMessage: 'Введите корректный Email',
-//     },
-//   ]).onSuccess((event) => {
-//     console.log('Validation passes and form submitted', event);
+validation2
+  .addField('.project-name', [
+    {
+      rule: 'minLength',
+      value: 3,
+      errorMessage: 'Введите 3 и более символов',
+    },
+    {
+      rule: 'maxLength',
+      value: 15,
+      errorMessage: 'Максимум — 15 символов',
+    },
+    {
+      rule: 'required',
+      value: true,
+      errorMessage: 'Имя обязательно'
+    }
+  ])
+  // .addField('.project-email', [
+  //   {
+  //     rule: 'required',
+  //     value: true,
+  //     errorMessage: 'Email обязателен',
+  //   },
+  //   {
+  //     rule: 'email',
+  //     value: true,
+  //     errorMessage: 'Введите корректный Email',
+  //   },
+  // ])
+  .onSuccess((event) => {
+    console.log('Validation passes and form submitted', event);
 
-//     let formData = new FormData(event.target);
+    let formData = new FormData(event.target);
 
-//     console.log(...formData);
+    console.log(...formData);
 
-//     let xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
 
-//     xhr.onreadystatechange = function () {
-//       if (xhr.readyState === 4) {
-//         if (xhr.status === 200) {
-//           console.log('Отправлено');
-//         }
-//       }
-//     }
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log('Отправлено');
+        }
+      }
+    };
+    const email = document.querySelector('#email');
+    const whatsapp = document.querySelector('#whatsapp');
+    const telegram = document.querySelector('#telegram');
 
-//     xhr.open('POST', 'mail.php', true);
-//     xhr.send(formData);
-//     document.location.href = 'spasibo';
-//   });
+    if(email.value === '' && whatsapp.value === '' && telegram.value === '') {
+      xhr.abort();
+      alert('Вы забыли указать Email, WhatsApp или Telegram')
+    } else {
+      xhr.open('POST', 'mail.php', true);
+      xhr.send(formData);
+      document.location.href = 'spasibo';
+    }
+  });
 
 validation3
   .addField('.calculation-name', [
