@@ -222,7 +222,7 @@ img:not([src]):not([srcset]) {
 }
 
 .promo__slider {
-  height: 75vh;
+  height: 68vh;
   width: 1268px;
 }
 
