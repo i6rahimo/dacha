@@ -2298,3 +2298,9 @@ a.modal__btn {
   order: 1;
   grid-area: btn;
 }
+
+
+.header {
+  position: fixed;
+  z-index: 23;
+}

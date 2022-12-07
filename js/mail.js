@@ -230,3 +230,15 @@ validation3
 //     })
 // }
 // getFiles() 
+// function getUrl() {
+//   const currentURL = window.location.href;
+//   if(window.location.href.indexOf("dacnnkleenbrus") != -1){
+//     const title = document.querySelector('.promo__title')
+//     title.innerHTML = 'Строим дачные дома из клееного бруса в "под ключ" Мск и МО  за 60 дней.'
+//   }else {
+//     title.innerHTML = "Дачные дома из бруса"
+//   }
+
+
+// }
+// getUrl()
